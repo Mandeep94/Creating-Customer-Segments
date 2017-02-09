@@ -11782,7 +11782,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[127]:</div>
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># Import libraries necessary for this project</span>
@@ -12090,7 +12090,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[131]:</div>
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># TODO: Make a copy of the DataFrame, using the &#39;drop&#39; function to drop the given feature</span>
@@ -12101,9 +12101,9 @@ div#notebook {
 <span class="c1"># TODO: Split the data into training and testing sets using the given feature as the target</span>
 <span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">new_data</span><span class="p">,</span> <span class="n">milk</span><span class="p">,</span> <span class="n">test_size</span> <span class="o">=</span> <span class="mf">0.25</span><span class="p">,</span> <span class="n">random_state</span> <span class="o">=</span> <span class="mi">5</span><span class="p">)</span>
 
-<span class="kn">from</span> <span class="nn">sklearn.tree</span> <span class="kn">import</span> <span class="n">DecisionTreeClassifier</span>
+<span class="kn">from</span> <span class="nn">sklearn.tree</span> <span class="kn">import</span> <span class="n">DecisionTreeRegressor</span>
 <span class="c1"># TODO: Create a decision tree regressor and fit it to the training set</span>
-<span class="n">regressor</span> <span class="o">=</span> <span class="n">DecisionTreeClassifier</span><span class="p">(</span><span class="n">random_state</span> <span class="o">=</span> <span class="mi">50</span><span class="p">)</span>
+<span class="n">regressor</span> <span class="o">=</span> <span class="n">DecisionTreeRegressor</span><span class="p">(</span><span class="n">random_state</span> <span class="o">=</span> <span class="mi">50</span><span class="p">)</span>
 <span class="n">regressor</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
 <span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">r2_score</span>
 <span class="n">pred</span> <span class="o">=</span> <span class="n">regressor</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
@@ -12122,7 +12122,7 @@ div#notebook {
 
 <div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>-0.492566556988
+<pre>-0.444961185118
 </pre>
 </div>
 </div>
@@ -12147,7 +12147,7 @@ div#notebook {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Answer: I tried to predict the value of milk based on other factors. The r2 score is -0.49. This feature, in my opinion, is relevent to predict if the type of customer, for example if the customer is a cafe then their spending amount would be higher. But based on the above score it is an independent feature, the -ve score indicates that we cannot predict this value based on others. </strong></p>
+<p><strong>Answer: I tried to predict the value of milk based on other factors. The r2 score is -0.44. This feature, in my opinion, is relevent to predict if the type of customer, for example if the customer is a cafe then their spending amount would be higher. But based on the above score it is an independent feature, the -ve score indicates that we cannot predict this value based on others. </strong></p>
 
 </div>
 </div>
@@ -18279,12 +18279,11 @@ rkJggg==
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>**Answer: First principal component has variance of 4.538 and second 2.7023, the sum of 7.240, this makes it the ratio of 0.7068. If ew take the first four pricipal components then it caputure 93.11% of variance</p>
-<p>1st PC : In the first PC there are significant weights for detegent paper, grocery and milk. All there are strongly correlated. We the increasein demand of one all the other two also incerase.These are the supplies related to kitchen or a cafe.</p>
-<p>2nd PC: In the second PC the is a strong correlation between fresh, frozen and Delicatessen. Also it shows a very weak correlation between the other three products also. So this may represent the customers that need all the product but mostly fresh, frozen and delicatessen. These customers could be a family, with supplies for their house kitchen</p>
-<p>3rd PC: In third PC both Delicatessen and Frozen have a strong correlation but there is also a inverse correlation wih fresh too. So this is like either meat and frozen or fresh.</p>
-<p>4th PC: This PC shows an inverse relation between Delicatessen and frozen.</p>
-<p>**</p>
+<p><strong>Answer: First principal component has variance of 4.538 and second 2.7023, the sum of 7.240, this makes it the ratio of 0.7068. If ew take the first four pricipal components then it caputure 93.11% of variance </strong></p>
+<p><strong>1st PC : In the first PC there are significant weights for detegent paper, grocery and milk. All there are strongly correlated. We the increasein demand of one all the other two also incerase.These are the supplies related to kitchen or a cafe.</strong></p>
+<p><strong>2nd PC: In the second PC the is a strong correlation between fresh, frozen and Delicatessen. Also it shows a very weak correlation between the other three products also. So this may represent the customers that need all the product but mostly fresh, frozen and delicatessen. These customers could be a family, with supplies for their house kitchen</strong></p>
+<p><strong>3rd PC: In third PC both Delicatessen and Frozen have a strong correlation but there is also a inverse correlation wih fresh too. So this is like either meat and frozen or fresh.</strong></p>
+<p><strong>4th PC: This PC shows an inverse relation between Delicatessen and frozen.This shows as the con sumption of one increse the demand for another decrease. This is the type of customers who either like the frozen or meat</strong></p>
 
 </div>
 </div>
